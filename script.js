@@ -19,37 +19,26 @@ function checkPassword() {
     });
   }
 
-  if (input === correctPassword) {
+  
+if (input === correctPassword) {
     nextScreen(1);
     startMusic(); // Start background music
-  } else {
+
+    // EXTRA CONDITION YOU ASKED FOR:
+    // If screen 4 becomes active after login, stop the music
+    if (document.getElementById("screen4").classList.contains("active")) {
+        stopMusic();
+    }
+
+} else {
     document.getElementById("error").innerText = "Wrong password 😢";
-  }
 }
 
+
 // Navigation
-//function nextScreen(num) {
-  //document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
-  //document.getElementById("screen" + num).classList.add("active");
-//}
-function stopMusic() {
-  const bg = document.getElementById("bgMusic");
-  bg.pause();
-  bg.currentTime = 0;
-}
 function nextScreen(num) {
   document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
   document.getElementById("screen" + num).classList.add("active");
-
-  // MUSIC CONTROL
-  if (num === 4) {
-    stopMusic();   // Stop at Chat Screen
-  }
-
-  if (num === 6) {
-    const bg = document.getElementById("bgMusic");
-    bg.play();     // Start again at Proposal Screen
-  }
 }
 // Message typing
 function revealMessage() {
