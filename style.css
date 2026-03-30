@@ -4,21 +4,19 @@ body {
   color: blue;
   text-align: center;
   overflow: hidden;
+  position: relative;
 }
-#lockScreen {
-  background: url('https://github.com/Ashutoshon/Nandnini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
-}
+
 #stars {
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: #87CEEB; /* sky blue */
+    background: #87CEEB;
     z-index: -1;
 }
 
-/* Screens */
 .screen {
   display: none;
   height: 100vh;
@@ -26,6 +24,53 @@ body {
   align-items: center;
   flex-direction: column;
   padding: 20px;
+  position: relative;
+}
+
+.screen::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 0;
+}
+
+.screen > * {
+  position: relative;
+  z-index: 1;
+}
+
+#lockScreen {
+  background: url('https://github.com/Ashutoshon/Nandini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
+}
+
+#screen1 {
+  background: url('https://github.com/Ashutoshon/Nandini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
+}
+
+#screen2 {
+  background: url('https://github.com/Ashutoshon/Nandini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
+}
+
+#screen3 {
+  background: url('https://github.com/Ashutoshon/Nandnini/raw/main/IMG_2798.JPG') center/cover no-repeat;
+}
+
+#screen4 {
+  background: url('https://github.com/Ashutoshon/Nandini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
+}
+
+#screen5 {
+  background: url('https://github.com/Ashutoshon/Nandini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+#screen6 {
+  background: url('https://github.com/Ashutoshon/Nandini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
 }
 
 .active {
@@ -33,16 +78,11 @@ body {
   animation: fadeIn 1.5s ease;
 }
 
-#lockScreen {
-  background: url('https://github.com/Ashutoshon/Nandnini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
-}
-
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
 }
 
-/* UI */
 input {
   padding: 20px;
   border-radius: 20px;
@@ -65,7 +105,6 @@ button {
   margin: 20px 0;
 }
 
-/* Chat */
 .chat-box {
   width: 90%;
   max-width: 400px;
@@ -93,7 +132,6 @@ button {
   align-self: flex-start;
 }
 
-/* Confetti */
 .confetti {
   position: fixed;
   width: 10px;
