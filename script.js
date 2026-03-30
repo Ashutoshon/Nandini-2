@@ -1,43 +1,31 @@
 // ===== CUSTOMIZE THIS =====
-const correctPassword = "N";
+const correctPassword = "Nandini"; 
 const girlName = "Nandini Singh";
 const startDate = new Date("2026-03-04");
 // ==========================
 
 // Set name
-document.getElementById("herName").innerText = girlName;
+document.getElementById("Nandini Singh").innerText = girlName;
 
 // Password
 function checkPassword() {
   const input = document.getElementById("password").value;
-
-  function startMusic() {
-    const bg = document.getElementById("bgMusic");
-    bg.volume = 1.0;
-    bg.play().catch(() => {
-      console.log("Autoplay blocked, will start on user interaction.");
-    });
-  }
-
-  
-if (input === correctPassword) {
+  if (input === correctPassword) {
     nextScreen(1);
-    startMusic(); // Start background music
-
-} else {
+  } else {
     document.getElementById("error").innerText = "Wrong password 😢";
+  }
 }
-
 
 // Navigation
 function nextScreen(num) {
   document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
   document.getElementById("screen" + num).classList.add("active");
 }
+
 // Message typing
 function revealMessage() {
-  const msg = `I love you sooo much ${girlName} 
-  You are so Smart,So polite, dont be angry at me`;
+  const msg = `I love you sooo much ${girlName} 🥺❤️`;
   let i = 0;
   let el = document.getElementById("hiddenMsg");
   el.innerHTML = "";
@@ -67,9 +55,7 @@ I didn’t even realize when you became my world 🌍
 And now...
 I just know one thing 💍
 
-I never want to lose you ❤️`
-  please text me back darling 
-    i want to hear your voice;
+I never want to lose you ❤️`;
 
 let sIndex = 0;
 
@@ -92,8 +78,6 @@ const chatMessages = [
   { text: "I miss you 🥺", type: "me" },
   { text: "Aww 😘", type: "her" },
   { text: "I love you ❤️", type: "me" }
-  { text: "i DONT LOVE YOU", type: "her" }
-  { text: "Call me back", type: "me" }
 ];
 
 function loadChat() {
@@ -116,7 +100,6 @@ function playMusic() {
   document.getElementById("music").play();
 }
 
-
 function playVoice() {
   document.getElementById("voice").play();
 }
@@ -132,7 +115,7 @@ setInterval(updateCounter, 1000);
 
 // Love button 💍
 function loveResponse() {
-  alert("I want to stay Forever with you Nandu");
+  alert("Forever with you ❤️🥺");
   for (let i = 0; i < 30; i++) {
     let conf = document.createElement("div");
     conf.className = "confetti";
@@ -149,18 +132,18 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let stars = Array.from({ length: 100 }, () => ({
+let stars = Array.from({length: 100}, () => ({
   x: Math.random() * canvas.width,
   y: Math.random() * canvas.height,
   r: Math.random() * 2
 }));
 
 function drawStars() {
-  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.clearRect(0,0,canvas.width,canvas.height);
   ctx.fillStyle = "white";
   stars.forEach(s => {
     ctx.beginPath();
-    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
     ctx.fill();
   });
 }
