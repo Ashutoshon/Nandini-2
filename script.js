@@ -1,17 +1,27 @@
 // ===== CUSTOMIZE THIS =====
-const correctPassword = "Nandini"; 
+const correctPassword = "N";
 const girlName = "Nandini Singh";
 const startDate = new Date("2026-03-04");
 // ==========================
 
 // Set name
-document.getElementById("Nandini Singh").innerText = girlName;
+document.getElementById("herName").innerText = girlName;
 
 // Password
 function checkPassword() {
   const input = document.getElementById("password").value;
+
+  function startMusic() {
+    const bg = document.getElementById("bgMusic");
+    bg.volume = 1.0;
+    bg.play().catch(() => {
+      console.log("Autoplay blocked, will start on user interaction.");
+    });
+  }
+
   if (input === correctPassword) {
     nextScreen(1);
+    startMusic(); // Start background music
   } else {
     document.getElementById("error").innerText = "Wrong password 😢";
   }
@@ -25,7 +35,8 @@ function nextScreen(num) {
 
 // Message typing
 function revealMessage() {
-  const msg = `I love you sooo much ${girlName} 🥺❤️`;
+  const msg = `I love you sooo much ${girlName} 
+  You are so Smart,So polite🥺❤️`;
   let i = 0;
   let el = document.getElementById("hiddenMsg");
   el.innerHTML = "";
@@ -35,6 +46,11 @@ function revealMessage() {
       el.innerHTML += msg.charAt(i);
       i++;
       setTimeout(type, 50);
+function nextScreen(currentScreen) {
+    if (currentScreen === 5) {
+        pauseMusic(); // Pause music on screen 5
+    } else if (currentScreen === 6) {
+        resumeMusic(); // Resume music on screen 6
     }
   }
   type();
@@ -132,18 +148,18 @@ const ctx = canvas.getContext("2d");
 canvas.width = window.innerWidth;
 canvas.height = window.innerHeight;
 
-let stars = Array.from({length: 100}, () => ({
+let stars = Array.from({ length: 100 }, () => ({
   x: Math.random() * canvas.width,
   y: Math.random() * canvas.height,
   r: Math.random() * 2
 }));
 
 function drawStars() {
-  ctx.clearRect(0,0,canvas.width,canvas.height);
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
   ctx.fillStyle = "white";
   stars.forEach(s => {
     ctx.beginPath();
-    ctx.arc(s.x, s.y, s.r, 0, Math.PI*2);
+    ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
     ctx.fill();
   });
 }
