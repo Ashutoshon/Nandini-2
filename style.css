@@ -31,6 +31,10 @@ body {
   animation: fadeIn 1.5s ease;
 }
 
+#lockScreen {
+  background: url('https://github.com/Ashutoshon/Nandnini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
+}
+
 @keyframes fadeIn {
   from { opacity: 0; }
   to { opacity: 1; }
