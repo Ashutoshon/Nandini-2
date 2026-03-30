@@ -24,12 +24,6 @@ if (input === correctPassword) {
     nextScreen(1);
     startMusic(); // Start background music
 
-    // EXTRA CONDITION YOU ASKED FOR:
-    // If screen 4 becomes active after login, stop the music
-    if (document.getElementById("screen4").classList.contains("active")) {
-        stopMusic();
-    }
-
 } else {
     document.getElementById("error").innerText = "Wrong password 😢";
 }
