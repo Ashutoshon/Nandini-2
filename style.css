@@ -56,7 +56,7 @@ body {
 }
 
 #screen3 {
-  background: url('https://github.com/Ashutoshon/Nandnini/raw/main/IMG_2798.JPG') center/cover no-repeat;
+  background: url('https://github.com/Ashutoshon/Nandini-2/raw/main/IMG_20260321_173410.jpg') center/cover no-repeat;
 }
 
 #screen4 {
@@ -64,13 +64,13 @@ body {
 }
 
 #screen5 {
-  background: url('https://github.com/Ashutoshon/Nandini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
+  background: url('https://github.com/Ashutoshon/Nandini-2/raw/main/IMG_2724.JPG') center/cover no-repeat;
   overflow-y: auto;
   -webkit-overflow-scrolling: touch;
 }
 
 #screen6 {
-  background: url('https://github.com/Ashutoshon/Nandini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
+  background: url('https://github.com/Ashutoshon/Nandini-2/raw/main/IMG_2953.JPG') center/cover no-repeat;
 }
 
 .active {
