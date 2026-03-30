@@ -28,15 +28,33 @@ function checkPassword() {
 }
 
 // Navigation
+//function nextScreen(num) {
+  //document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
+  //document.getElementById("screen" + num).classList.add("active");
+//}
+function stopMusic() {
+  const bg = document.getElementById("bgMusic");
+  bg.pause();
+  bg.currentTime = 0;
+}
 function nextScreen(num) {
   document.querySelectorAll(".screen").forEach(s => s.classList.remove("active"));
   document.getElementById("screen" + num).classList.add("active");
-}
 
+  // MUSIC CONTROL
+  if (num === 4) {
+    stopMusic();   // Stop at Chat Screen
+  }
+
+  if (num === 6) {
+    const bg = document.getElementById("bgMusic");
+    bg.play();     // Start again at Proposal Screen
+  }
+}
 // Message typing
 function revealMessage() {
   const msg = `I love you sooo much ${girlName} 
-  You are so Smart,So polite🥺❤️`;
+  You are so Smart,So polite, dont be angry at me`;
   let i = 0;
   let el = document.getElementById("hiddenMsg");
   el.innerHTML = "";
@@ -66,7 +84,9 @@ I didn’t even realize when you became my world 🌍
 And now...
 I just know one thing 💍
 
-I never want to lose you ❤️`;
+I never want to lose you ❤️`
+  please text me back darling 
+    i want to hear your voice;
 
 let sIndex = 0;
 
@@ -89,6 +109,8 @@ const chatMessages = [
   { text: "I miss you 🥺", type: "me" },
   { text: "Aww 😘", type: "her" },
   { text: "I love you ❤️", type: "me" }
+  { text: "i DONT LOVE YOU", type: "her" }
+  { text: "Call me back", type: "me" }
 ];
 
 function loadChat() {
@@ -111,6 +133,7 @@ function playMusic() {
   document.getElementById("music").play();
 }
 
+
 function playVoice() {
   document.getElementById("voice").play();
 }
@@ -126,7 +149,7 @@ setInterval(updateCounter, 1000);
 
 // Love button 💍
 function loveResponse() {
-  alert("Forever with you ❤️🥺");
+  alert("I want to stay Forever with you Nandu");
   for (let i = 0; i < 30; i++) {
     let conf = document.createElement("div");
     conf.className = "confetti";
