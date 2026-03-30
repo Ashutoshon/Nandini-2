@@ -5,7 +5,9 @@ body {
   text-align: center;
   overflow: hidden;
 }
-
+#lockScreen {
+  background: url('https://github.com/Ashutoshon/Nandnini-2/raw/main/IMG_2798.JPG') center/cover no-repeat;
+}
 #stars {
     position: fixed;
     top: 0;
